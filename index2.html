@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Congratulations You Won!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: url('/home/sec-lab/Downloads/winner.jpeg') no-repeat center center fixed;
+            background-size: cover;
+            color: #ffd700; /* Gold color for text */
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            animation: blink 1s infinite alternate;
+            color: #c0c0c0; /* Silver color for blinking */
+        }
+
+        @keyframes blink {
+            0% {
+                color: #ffd700; /* Gold color */
+            }
+            100% {
+                color: #c0c0c0; /* Silver color */
+            }
+        }
+
+        img {
+            cursor: pointer;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.8); /* White background with opacity */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .button {
+            display: inline-block;
+            padding: 0; /* Remove padding to fit only the image */
+            transition: transform 0.3s ease-in-out;
+            margin: 10px;
+        }
+
+        .button img {
+            border-radius: 10px; /* Apply border-radius to the image */
+        }
+
+        .button:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Congratulations You Won Lottery in Walmart!</h1>
+        
+        <!-- Password-Free Gift -->
+        <a href="/home/sec-lab/project/dist/encrypt_aes_key" class="button" download onclick="showGiftAlert(1)">
+            <img src="password_free_image.jpg" alt="Password-Free Gift">
+        </a>
+        
+        <!-- Password-Protected Gift -->
+        <a href="#" class="button" onclick="showPasswordPrompt()">
+            <img src="password_protected_image.jpg" alt="Password-Protected Gift">
+        </a>
+    </div>
+
+    <script>
+        function showGiftAlert(giftNumber) {
+            alert(`Congratulations! You've accessed Gift ${giftNumber}.`);
+            // You can replace the alert with any action you want.
+        }
+
+        function showPasswordPrompt() {
+            var password = prompt("To download the password-protected gift, please enter the password:");
+            // You can add logic here to check the password and take appropriate action.
+            if (password === "12345") {
+                alert("Password is correct. Downloading the password-protected gift!");
+                // You can add logic here to download the password-protected gift or perform any other action.
+            } else if (password !== null) {
+                alert("Incorrect password. Try again.");
+                event.preventDefault();
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
